@@ -10,6 +10,8 @@ from sklearn import svm
 from sklearn.neighbors import KNeighborsClassifier 
 from sklearn import metrics
 from sklearn.model_selection import train_test_split
+import seaborn as sns
+import matplotlib.pyplot as plt 
 
 iris = load_iris() #loading the iris dataset into python
 #you can also use a .csv file and upload the dataset using pandas
@@ -40,3 +42,14 @@ y_pred = dt.predict(X_test) #predict the test set
 #ensure model accuracy 
 acc_dt = metrics.accuracy_score(y_pred,y_test)
 print("accuracy:", acc_dt)
+cm = metrics.confusion_matrix(y_test, y_pred)
+print("Confusion Matrix:\n", cm)
+
+plt.figure(figsize=(6, 5))
+sns.heatmap(cm, annot=True, fmt="d", cmap="Blues",
+            xticklabels=iris.target_names,
+            yticklabels=iris.target_names)
+plt.xlabel("Predicted")
+plt.ylabel('True')
+plt.title("Iris Decision Tree Classifier")
+plt.show()
