@@ -23,10 +23,12 @@ This project requires tensorflow, keras, and scikit-learn. It was developed usin
 Use 'pip install -r requirements.txt' to install the following dependencies:
 
 ```
-scikit-learn==1.7.1
-matplotlib
-seaborn
-numpy
+matplotlib==3.10.6
+numpy==2.3.3
+pandas==2.3.3
+scikit-learn==1.7.2
+scipy==1.16.2
+seaborn==0.13.2
 ```
 # How to Use
 To utilize this code, a Python environment is installed. Download the Iris_Decision_Tree.py file onto your computer into a folder. Then open that folder/file on VSCode.
