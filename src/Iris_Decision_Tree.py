@@ -57,13 +57,13 @@ fig=plt.gcf()
 fig.set_size_inches(12,6)
 plt.show()
 
-g = sns.violinplot(y='Species', x='SepalLengthCm', data=iris1, inner='quartile')
+g = sns.violinplot(y='Species', x='SepalLengthCm', data=df, inner='quartile')
 plt.show()
-g = sns.violinplot(y='Species', x='SepalWidthCm', data=iris1, inner='quartile')
+g = sns.violinplot(y='Species', x='SepalWidthCm', data=df, inner='quartile')
 plt.show()
-g = sns.violinplot(y='Species', x='PetalLengthCm', data=iris1, inner='quartile')
+g = sns.violinplot(y='Species', x='PetalLengthCm', data=df, inner='quartile')
 plt.show()
-g = sns.violinplot(y='Species', x='PetalWidthCm', data=iris1, inner='quartile')
+g = sns.violinplot(y='Species', x='PetalWidthCm', data=df, inner='quartile')
 plt.show()
 
 
