@@ -12,6 +12,7 @@ from sklearn import metrics
 from sklearn.model_selection import train_test_split
 import seaborn as sns
 import matplotlib.pyplot as plt 
+import pandas as pd
 
 iris = load_iris() #loading the iris dataset into python
 #you can also use a .csv file and upload the dataset using pandas
@@ -26,8 +27,45 @@ iris = load_iris() #loading the iris dataset into python
 X = iris.data  #features (sepal length, sepal width, petal length, petal width)
 y = iris.target  #labels / targets variable (species: 0 for setosa, 1 for versicolor, 2 for virginica)
 
+#doing this allows us to make a pairplot by converting to pandas dataframe
+#also replaces numerical place holders with the species name
+df = pd.DataFrame(X, columns=iris.feature_names)
+df["Species"] = pd.Series(y).map(dict(enumerate(iris.target_names)))
+
+#data preview
 print(X.shape) #(150,4): 150 rows (flower samples) and 4 columns (measurements: sepal length, sepal width, petal length, and petal width). 
 print(y.shape) #(150,)
+
+#data visualization
+#pairplot
+sns.pairplot(df, hue='Species', markers='+')
+plt.show()
+
+#sepal length vs width 
+fig = df[df.Species=='Iris-setosa'].plot(kind='scatter',x='SepalLengthCm',y='SepalWidthCm',color='orange', label='Setosa')
+df[df.Species=='Iris-versicolor'].plot(kind='scatter',x='SepalLengthCm',y='SepalWidthCm',color='blue', label='versicolor',ax=fig)
+df[df.Species=='Iris-virginica'].plot(kind='scatter',x='SepalLengthCm',y='SepalWidthCm',color='green', label='virginica', ax=fig)
+fig.set_xlabel("Sepal Length")
+fig.set_ylabel("Sepal Width")
+fig.set_title("Sepal Length VS Width")
+fig=plt.gcf()
+fig.set_size_inches(12,8)
+plt.show()
+
+df.hist(edgecolor='black')
+fig=plt.gcf()
+fig.set_size_inches(12,6)
+plt.show()
+
+g = sns.violinplot(y='Species', x='SepalLengthCm', data=iris1, inner='quartile')
+plt.show()
+g = sns.violinplot(y='Species', x='SepalWidthCm', data=iris1, inner='quartile')
+plt.show()
+g = sns.violinplot(y='Species', x='PetalLengthCm', data=iris1, inner='quartile')
+plt.show()
+g = sns.violinplot(y='Species', x='PetalWidthCm', data=iris1, inner='quartile')
+plt.show()
+
 
 #split into training and testing datasets 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=10)
