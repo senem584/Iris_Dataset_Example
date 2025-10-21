@@ -34,11 +34,25 @@ This project requires tensorflow, keras, and scikit-learn. It was developed usin
 Use 'pip install -r requirements.txt' to install the following dependencies:
 
 ```
+contourpy==1.3.3
+cycler==0.12.1
+fonttools==4.60.1
+joblib==1.5.2
+kiwisolver==1.4.9
 matplotlib==3.10.6
+numpy==2.3.2
+packaging==25.0
 pandas==2.3.3
-scikit-learn==1.7.2
-scipy==1.16.2
+pillow==11.3.0
+pyparsing==3.2.5
+python-dateutil==2.9.0.post0
+pytz==2025.2
+scikit-learn==1.7.1
+scipy==1.16.1
 seaborn==0.13.2
+six==1.17.0
+threadpoolctl==3.6.0
+tzdata==2025.2
 ```
 # How to Use
 Clone the repository
