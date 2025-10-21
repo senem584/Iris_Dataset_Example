@@ -65,9 +65,6 @@ Run the file
 Run using:
 - Make sure your enviornment is active. 
 - python iris_decision_tree.py
-# Error Handling 
-This project does not have any error handling. 
-
 # References 
 - [1] Scikit-learn Documentation: Iris Dataset. https://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_iris.html
 - [2] GeeksforGeeks, “Decision Tree Classifier in Python using Scikit-learn.” https://www.geeksforgeeks.org/machine-learning/decision-tree-implementation-python/
