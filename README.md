@@ -1,7 +1,7 @@
-# Iris_Dataset_Example
-This project demonstrates classification using the Iris dataset with machine learning algorithms. The main focus is on implementing a Decision Tree Classifier. The Iris dataset is a classic dataset in machine learning that contains 150 samples of iris flowers, with four features (sepal length, sepal width, petal length, petal width) and three classes (Setosa, Versicolor, and Virginica).
+# Iris Dataset Example
+This project demonstrates classification using the Iris dataset with machine learning algorithms. The main focus is on implementing a Decision Tree Classifier. The Iris dataset is a classic dataset in machine learning that contains 150 samples of iris flowers, with four features (sepal length, sepal width, petal length, petal width) and three classes (Setosa, Versicolor, and Virginica). It is a classic example of a supervised learning problem used to explore classification, data visualization, and model evaluation techniques.
 
-The goal of this project is to showcase how classification models can be trained, evaluated, and visualized. The code is implemented in two styles: a regular procedural version and an object-oriented (OOP) version for better modularity and reusability.
+The goal of this project is to showcase fundamental techniques in data preprocessing, visualization, and machine learning classification, highlighting how models can learn from real-world numeric data to distinguish between different categories with high accuracy. The code is implemented in two styles: a regular procedural version and an object-oriented (OOP) version for better modularity and reusability. Both are shown in the [source](#src) folder. 
 
 # Table Of Contents
 - [Implementation](#implementation)
@@ -11,12 +11,23 @@ The goal of this project is to showcase how classification models can be trained
 - [References](#references)
 
 # Implementation
-Dataset: Iris Dataset - 150 samples, 4 features, 3 classes
+The implementation begins by loading the Iris dataset from the scikit-learn library. The dataset contains:
+- 150 samples
+- 4 numerical features (sepal length, sepal width, petal length, petal width)
+- 3 species labels (setosa, versicolor, virginica)
 
-Model: Decision Tree Classifier
+Data visualization is performed using Seaborn and Matplotlib, including:
+- Pairplots showing relationships between features
+- Scatter plots comparing sepal and petal dimensions
+- Violin and histogram plots to display data distribution across species
 
-Evaluation: Accuracy score, confusion matrix, and classification report
+The dataset is then split into training and testing sets (70/30 split) using train_test_split(). A Decision Tree Classifier is trained on the training set, and predictions are made on the test set.
 
+To evaluate model performance:
+- Accuracy score is calculated using metrics.accuracy_score()
+- Confusion Matrix and Heatmap visualize the model’s prediction performance
+
+This dataset is widely used for educational purposes in machine learning and data visualization because it provides a simple yet powerful introduction to classification concepts.
 # Requirments 
 This project requires tensorflow, keras, and scikit-learn. It was developed using a Python environment through VSCode.
 
